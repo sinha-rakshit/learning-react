@@ -1,20 +1,19 @@
+import { useState } from "react";
 import "./App.css";
 
-const Person = (props) => {
-  return (
-    <>
-      <h1>First Name: {props.FirstName}</h1>
-      <h2>Last Name: {props.LastName}</h2>
-      <h2>Age: {props.Age}</h2>
-    </>
-  );
-};
-
 const App = () => {
+  const [counter, SetCounter] = useState(0);
   return (
     <div className="App">
-      <Person FirstName={"Rakshit"} LastName={"Sinha"} Age={21} />
-      <Person FirstName={"Yash"} LastName={"Raj"} Age={19} />
+      <button onClick={() => SetCounter((PrevCount) => PrevCount - 1)}>
+        {" "}
+        -{" "}
+      </button>
+      <h1>{counter}</h1>
+      <button onClick={() => SetCounter((PrevCount) => PrevCount + 1)}>
+        {" "}
+        +{" "}
+      </button>
     </div>
   );
 };
